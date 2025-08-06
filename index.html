@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UltraOP - Gaming Beyond Limits</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#support">Support UltraOP</a></li>
+            <li><a href="#footer-comment">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero">
+        <div class="hero-content">
+            <h1>UltraOP</h1>
+            <p>Gaming Beyond Limits – Epic Streams, Shorts & Behind-the-Scenes Madness</p>
+            <a href="#channels" class="cta-button">Explore Channels</a>
+        </div>
+        <div id="particles"></div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About UltraOP</h2>
+        <p>Hi, I’m Ahsan – the creator behind UltraOP. Starting with Free Fire live streams, I expanded into gaming shorts, raw behind-the-scenes content, and blogs about gaming and technology. UltraOP is built to entertain, engage, and inspire the gaming community.</p>
+    </section>
+
+    <!-- Our Channels -->
+    <section id="channels">
+        <h2>Our Channels</h2>
+        <div class="channel-grid">
+
+            <div class="channel-card">
+                <h3><img src="youtube-logo.png" class="channel-logo"> UltraOpLive</h3>
+                <div class="stats" id="stats-UltraOpLive"></div>
+                <div class="videos" id="videos-UltraOpLive"></div>
+                <div class="g-ytsubscribe" data-channelid="UCAxlmL3_721xzOjQVe5Klbg" data-layout="default" data-count="default"></div>
+            </div>
+
+            <div class="channel-card">
+                <h3><img src="youtube-logo.png" class="channel-logo"> Op Earnings</h3>
+                <div class="stats" id="stats-OpEarnings"></div>
+                <div class="videos" id="videos-OpEarnings"></div>
+                <div class="g-ytsubscribe" data-channelid="UC-KkWDruqOobwZgylSb4kwA" data-layout="default" data-count="default"></div>
+            </div>
+
+            <div class="channel-card">
+                <h3><img src="youtube-logo.png" class="channel-logo"> UltraOpUnfilter (Coming Soon)</h3>
+            </div>
+            <div class="channel-card">
+                <h3><img src="youtube-logo.png" class="channel-logo"> OfficialUltraOp (Coming Soon)</h3>
+            </div>
+            <div class="channel-card">
+                <h3><img src="youtube-logo.png" class="channel-logo"> GamerUltraOp (Coming Soon)</h3>
+            </div>
+            <div class="channel-card">
+                <h3><img src="youtube-logo.png" class="channel-logo"> UltraOpShorts (Coming Soon)</h3>
+            </div>
+
+            <div class="channel-card">
+                <h3><img src="rooter-logo.png" class="channel-logo"> Rooter Channel</h3>
+                <p><a href="https://www.rooter.gg/profile/142404154" target="_blank">Follow on Rooter</a></p>
+                <ul>
+                    <li>Total Followers: 509.9K+</li>
+                    <li>Total Views: 35M+</li>
+                    <li>Number of Streams: 700+</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UltraOP Achievements -->
+    <section id="fun-trivia">
+        <h2>UltraOP Achievements</h2>
+        <div class="trivia-grid">
+            <div class="trivia-card">
+                <h4>Total Subscribers</h4>
+                <div class="counter" data-target="500000">0</div>
+            </div>
+            <div class="trivia-card">
+                <h4>Total Views</h4>
+                <div class="counter" data-target="35000000">0</div>
+            </div>
+            <div class="trivia-card">
+                <h4>Total Videos</h4>
+                <div class="counter" data-target="700">0</div>
+            </div>
+            <div class="trivia-card">
+                <h4>Rooter Followers</h4>
+                <div class="counter" data-target="509900">0</div>
+            </div>
+            <div class="trivia-card">
+                <h4>Rooter Views</h4>
+                <div class="counter" data-target="35000000">0</div>
+            </div>
+            <div class="trivia-card">
+                <h4>Rooter Streams</h4>
+                <div class="counter" data-target="700">0</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fan Showcase -->
+    <section id="fans-showcase">
+        <h2>What Our Fans Are Creating</h2>
+        <div class="fan-grid" id="fan-videos">
+            <!-- JavaScript দিয়ে ভিডিও লোড হবে -->
+        </div>
+    </section>
+
+    <!-- Recent Videos Carousel -->
+    <section id="recent-videos">
+        <h2>Recent Videos (Last 30 Days)</h2>
+        <div class="video-carousel">
+            <button id="prev">&#10094;</button>
+            <div class="video-wrapper" id="recent-videos-carousel">
+                <!-- JavaScript দিয়ে ভিডিও লোড হবে -->
+            </div>
+            <button id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Support UltraOP -->
+    <section id="support">
+        <h2>Support UltraOP</h2>
+        <p class="upi-highlight">Support UltraOP via UPI:<br><strong>ultraop001@ybl</strong></p>
+    </section>
+
+    <!-- Footer with Comment -->
+    <footer id="footer-comment">
+        <div class="footer-layout">
+            <!-- Comment Box -->
+            <div class="footer-comment">
+                <h3>Leave a Comment</h3>
+                <form id="comment-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Social & UPI -->
+            <div class="footer-social">
+                <div class="social-links">
+                    <a href="https://instagram.com/ultraopp" target="_blank">Instagram</a> |
+                    <a href="https://discord.gg/ZQ2afmPvuP" target="_blank">Discord</a> |
+                    <a href="https://www.whatsapp.com/channel/0029VaeMLDaHgZWfuPDefa0t" target="_blank">WhatsApp Channel</a>
+                </div>
+                <p>Business Email: <a href="mailto:ultraop27@gmail.com">ultraop27@gmail.com</a></p>
+            </div>
+        </div>
+        <p>&copy; 2025 UltraOP. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

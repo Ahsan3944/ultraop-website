@@ -1,0 +1,290 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Sticky Navigation --- */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px 0;
+    z-index: 1000;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+#navbar a {
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+#navbar a:hover {
+    text-shadow: 0 0 10px #0ff;
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    background: radial-gradient(circle at top, #111, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+#hero h1 {
+    font-size: 4rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 40px #0ff;
+    animation: glow 2s infinite alternate;
+}
+#hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin: 10px 0 20px;
+}
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff00ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #ff00ff, 0 0 30px #ff00ff;
+    transition: 0.3s;
+}
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff00ff, 0 0 50px #ff00ff;
+}
+
+/* --- Section Titles --- */
+section h2 {
+    text-align: center;
+    margin: 70px 0 30px;
+    font-size: 2.5rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 30px #0ff;
+}
+
+/* --- About Section --- */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    background: #0d0d0d;
+}
+
+/* --- Our Channels --- */
+#channels {
+    background: #111a2b;
+    padding: 50px 20px;
+}
+.channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.channel-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #111;
+}
+.channel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+}
+.channel-logo {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* --- UltraOP Achievements --- */
+#fun-trivia {
+    background: #1a112b;
+    padding: 50px 20px;
+}
+.trivia-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.trivia-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #0ff;
+    transition: 0.3s;
+    width: 200px;
+}
+.trivia-card h4 {
+    margin-bottom: 10px;
+    color: #0ff;
+    font-size: 1.2rem;
+}
+.trivia-card .counter {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 30px #ff00ff;
+}
+.trivia-card:hover {
+    transform: scale(1.05);
+}
+
+/* --- Fans Showcase --- */
+#fans-showcase {
+    background: #2b1111;
+    padding: 50px 20px;
+}
+.fan-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.fan-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #111;
+}
+.fan-card:hover {
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+}
+
+/* --- Recent Videos Carousel --- */
+#recent-videos {
+    background: #112b11;
+    padding: 50px 20px;
+}
+.video-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.video-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 900px;
+    transition: transform 0.3s ease-in-out;
+}
+.video-wrapper iframe {
+    margin: 0 10px;
+    border-radius: 10px;
+}
+#prev, #next {
+    background: #0ff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+#prev:hover, #next:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #0ff;
+}
+
+/* --- Support UltraOP --- */
+#support {
+    text-align: center;
+    padding: 60px 20px;
+    background: #111;
+}
+.upi-highlight {
+    font-size: 1.8rem;
+    color: #fff;
+    background: linear-gradient(90deg, #ff00ff, #0ff);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* --- Footer --- */
+footer {
+    background: #000;
+    padding: 30px 20px;
+    color: #ccc;
+    text-align: center;
+}
+.footer-layout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+.footer-comment form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-comment input, .footer-comment textarea {
+    width: 250px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.footer-comment button {
+    padding: 10px;
+    background: #0ff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.footer-comment button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #0ff, 0 0 30px #0ff;
+}
+footer a {
+    color: #0ff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-shadow: 0 0 10px #0ff;
+}
+
+/* --- Animations --- */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #0ff, 0 0 30px #0ff; }
+    to { text-shadow: 0 0 20px #0ff, 0 0 60px #0ff; }
+}
