@@ -90,24 +90,43 @@ channels.forEach(channel => {
 });
 
 /* -------------------------
-   3. Animated Counters
+   Improved Animated Counters
 -------------------------- */
 function animateCounters() {
     const counters = document.querySelectorAll('.counter');
-    const speed = 200; // Lower is faster
+    const animationDuration = 15000; // 15 seconds total
+    const startTime = Date.now();
     
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
-
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(animateCounters, 1);
-        } else {
-            counter.innerText = formatNumber(target);
+    function updateCounters() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / animationDuration, 1);
+        
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const currentValue = Math.floor(progress * target);
+            
+            // Format the number with k/M suffixes
+            counter.textContent = formatNumber(currentValue) + suffix;
+        });
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounters);
         }
-    });
+    }
+    
+    requestAnimationFrame(updateCounters);
+}
+
+// Format numbers with k/M suffixes
+function formatNumber(num) {
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    }
+    if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'k';
+    }
+    return num.toString();
 }
 
 // Trigger counters when section is in view
@@ -123,7 +142,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-card').forEach(card => {
     observer.observe(card);
 });
-
 /* -------------------------
    4. Fan Showcase
 -------------------------- */
