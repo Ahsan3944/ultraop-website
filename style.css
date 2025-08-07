@@ -571,14 +571,60 @@ body {
     color: var(--gray-color);
 }
 
+/* UPI ID Styles */
 .upi-id {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: rgba(108, 92, 231, 0.2);
-    padding: 10px;
+    padding: 12px 15px;
     border-radius: var(--border-radius);
+    margin: 10px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+}
+
+.upi-id:hover {
+    background-color: rgba(108, 92, 231, 0.3);
+    border-color: var(--primary-color);
+}
+
+.upi-id span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
     word-break: break-all;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: var(--transition);
+}
+
+.copy-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.copy-message {
+    color: var(--success-color);
+    font-size: 0.9rem;
+    height: 1rem;
+    text-align: center;
+    margin-top: 5px;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.copy-message.show {
+    opacity: 1;
 }
 
 /* ===== Contact Section ===== */
