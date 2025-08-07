@@ -248,6 +248,55 @@ document.getElementById('prev').addEventListener('click', () => {
 loadRecentVideos();
 
 /* -------------------------
+   UPI ID Copy Functionality
+-------------------------- */
+function setupUPICopy() {
+    const upiIdElement = document.getElementById('upi-id');
+    const copyMessage = document.getElementById('copy-message');
+    const upiId = upiIdElement.getAttribute('data-upi');
+
+    // Click to copy functionality
+    upiIdElement.addEventListener('click', () => {
+        copyToClipboard(upiId);
+    });
+
+    // Button to copy functionality
+    const copyBtn = upiIdElement.querySelector('.copy-btn');
+    copyBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent triggering the parent click event twice
+        copyToClipboard(upiId);
+    });
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            // Show success message
+            copyMessage.textContent = 'Copied to clipboard!';
+            copyMessage.classList.add('show');
+            
+            // Change button icon temporarily
+            const icon = copyBtn.querySelector('i');
+            icon.classList.remove('fa-copy');
+            icon.classList.add('fa-check');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                copyMessage.classList.remove('show');
+                icon.classList.remove('fa-check');
+                icon.classList.add('fa-copy');
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+            copyMessage.textContent = 'Failed to copy. Please try again.';
+            copyMessage.classList.add('show');
+            setTimeout(() => copyMessage.classList.remove('show'), 2000);
+        });
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', setupUPICopy);
+
+/* -------------------------
    6. Firebase Comment Integration
 -------------------------- */
 // Initialize Firebase (replace with your config)
@@ -346,4 +395,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Other initialization code you may have...
+    setupUPICopy(); // Add this line if not already present
 });
