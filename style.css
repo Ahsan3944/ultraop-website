@@ -411,16 +411,19 @@ body {
 }
 
 .stat-card .counter {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Slightly smaller than before */
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 10px;
+    font-family: var(--font-secondary); /* Consider a more readable font */
+    transition: all 0.3s ease;
 }
 
-.stat-card h4 {
-    font-size: 1.1rem;
-    color: var(--gray-color);
-    font-weight: 500;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stat-card .counter {
+        font-size: 2rem;
+    }
 }
 
 /* ===== Fan Showcase Section ===== */
